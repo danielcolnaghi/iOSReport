@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Form View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FormViewController" customModule="AlienReporter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6kg-GM-oTn">
+                                <rect key="frame" x="0.0" y="36" width="375" height="631"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FieldCell" rowHeight="87" id="CgI-ze-hhh" customClass="FieldCell" customModule="AlienReporter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CgI-ze-hhh" id="Ddo-Hp-XIT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEx-7K-25a">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cm4-KG-gZR">
+                                                    <rect key="frame" x="15" y="40" width="345" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tEx-7K-25a" firstAttribute="leading" secondItem="Ddo-Hp-XIT" secondAttribute="leadingMargin" id="1u1-4l-90K"/>
+                                                <constraint firstItem="cm4-KG-gZR" firstAttribute="leading" secondItem="Ddo-Hp-XIT" secondAttribute="leadingMargin" id="aia-WG-NZs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cm4-KG-gZR" secondAttribute="bottom" constant="6" id="dXA-zr-fQi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cm4-KG-gZR" secondAttribute="trailing" id="kXD-gB-BqC"/>
+                                                <constraint firstItem="cm4-KG-gZR" firstAttribute="top" secondItem="tEx-7K-25a" secondAttribute="bottom" constant="8" id="mtt-4R-d82"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tEx-7K-25a" secondAttribute="trailing" id="xJ9-vd-i4j"/>
+                                                <constraint firstItem="tEx-7K-25a" firstAttribute="top" secondItem="Ddo-Hp-XIT" secondAttribute="topMargin" id="zmh-09-hNh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblCaption" destination="tEx-7K-25a" id="YXX-g6-Chb"/>
+                                            <outlet property="txtInput" destination="cm4-KG-gZR" id="dWh-AJ-hbX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mNe-Zp-BGE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cwc-Uk-eA8"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fxb-B5-xm5">
+                                <rect key="frame" x="0.0" y="28" width="375" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6kg-GM-oTn" secondAttribute="trailing" id="4g4-s0-t06"/>
+                            <constraint firstItem="6kg-GM-oTn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BT9-Ya-VKe"/>
+                            <constraint firstItem="6kg-GM-oTn" firstAttribute="top" secondItem="Fxb-B5-xm5" secondAttribute="bottom" constant="8" id="BlD-Hm-nDb"/>
+                            <constraint firstItem="Fxb-B5-xm5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="HMn-uf-Wfb"/>
+                            <constraint firstItem="Fxb-B5-xm5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JFa-0S-Iiz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fxb-B5-xm5" secondAttribute="trailing" id="aCb-1c-9yn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6kg-GM-oTn" secondAttribute="bottom" id="bR8-qS-Uq7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblFormChangeInfo" destination="Fxb-B5-xm5" id="RU0-lW-7rD"/>
+                        <outlet property="tblForm" destination="6kg-GM-oTn" id="RG0-Zi-io5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-561" y="98"/>
+        </scene>
+    </scenes>
+</document>
